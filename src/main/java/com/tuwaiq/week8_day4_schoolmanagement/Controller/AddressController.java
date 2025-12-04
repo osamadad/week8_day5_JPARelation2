@@ -1,7 +1,7 @@
 package com.tuwaiq.week8_day4_schoolmanagement.Controller;
 
 import com.tuwaiq.week8_day4_schoolmanagement.Api.ApiResponse;
-import com.tuwaiq.week8_day4_schoolmanagement.DTO.AddressDTO;
+import com.tuwaiq.week8_day4_schoolmanagement.DTOIn.AddressDTO;
 import com.tuwaiq.week8_day4_schoolmanagement.Service.AddressService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

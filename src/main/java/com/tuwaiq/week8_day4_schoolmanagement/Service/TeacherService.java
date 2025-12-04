@@ -1,11 +1,17 @@
 package com.tuwaiq.week8_day4_schoolmanagement.Service;
 
 import com.tuwaiq.week8_day4_schoolmanagement.Api.ApiException;
+import com.tuwaiq.week8_day4_schoolmanagement.DTOOUT.TeacherDTOOut;
+import com.tuwaiq.week8_day4_schoolmanagement.Model.Address;
+import com.tuwaiq.week8_day4_schoolmanagement.Model.Course;
 import com.tuwaiq.week8_day4_schoolmanagement.Model.Teacher;
+import com.tuwaiq.week8_day4_schoolmanagement.Repository.AddressRepository;
+import com.tuwaiq.week8_day4_schoolmanagement.Repository.CourseRepository;
 import com.tuwaiq.week8_day4_schoolmanagement.Repository.TeacherRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.swing.*;
 import java.util.List;
 
 @Service
@@ -13,6 +19,8 @@ import java.util.List;
 public class TeacherService {
 
     private final TeacherRepository teacherRepository;
+    private final AddressRepository addressRepository;
+    private final CourseRepository courseRepository;
 
     public void addTeacher(Teacher teacher){
         teacherRepository.save(teacher);
@@ -42,7 +50,10 @@ public class TeacherService {
         teacherRepository.delete(teacher);
     }
 
-    public Teacher getTeacherById(Integer id){
-        return teacherRepository.findTeacherById(id);
+    public TeacherDTOOut getTeacherInfoById(Integer id){
+        Teacher teacher=teacherRepository.findTeacherById(id);
+        Address address=addressRepository.findAddressById(teacher.getAddress().getId());
+        List<Course> courses=courseRepository.findCoursesByTeacher_Id(teacher.getId());
+        return new TeacherDTOOut(teacher.getId(), teacher.getName(), teacher.getAge(), teacher.getEmail(), teacher.getSalary(), address.getArea(), address.getStreet(), address.getBuildingNumber(), courses);
     }
 }

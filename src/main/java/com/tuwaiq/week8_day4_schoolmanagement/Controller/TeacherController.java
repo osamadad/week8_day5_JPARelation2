@@ -40,6 +40,6 @@ public class TeacherController {
 
     @GetMapping("/get-by-id/{id}")
     public ResponseEntity<?> getTeacherById(@PathVariable Integer id){
-        return ResponseEntity.status(200).body(teacherService.getTeacherById(id));
+        return ResponseEntity.status(200).body(teacherService.getTeacherInfoById(id));
     }
 }

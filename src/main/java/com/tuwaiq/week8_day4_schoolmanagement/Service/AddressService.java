@@ -1,7 +1,7 @@
 package com.tuwaiq.week8_day4_schoolmanagement.Service;
 
 import com.tuwaiq.week8_day4_schoolmanagement.Api.ApiException;
-import com.tuwaiq.week8_day4_schoolmanagement.DTO.AddressDTO;
+import com.tuwaiq.week8_day4_schoolmanagement.DTOIn.AddressDTO;
 import com.tuwaiq.week8_day4_schoolmanagement.Model.Address;
 import com.tuwaiq.week8_day4_schoolmanagement.Model.Teacher;
 import com.tuwaiq.week8_day4_schoolmanagement.Repository.AddressRepository;

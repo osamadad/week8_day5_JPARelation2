@@ -1,14 +1,9 @@
-package com.tuwaiq.week8_day4_schoolmanagement.DTO;
+package com.tuwaiq.week8_day4_schoolmanagement.DTOIn;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.stereotype.Service;
 
 @Data
 @AllArgsConstructor
